@@ -8,7 +8,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Uno Game</h2>
+    <main>
+      <div class="player2Container">
+        <ul class="cards">
+          <li class="card"><img src="assets/Deck.png" alt="" /></li>
+          <li class="card"><img src="assets/Deck.png" alt="" /></li>
+          <li class="card"><img src="assets/Deck.png" alt="" /></li>
+          <li class="card"><img src="assets/Deck.png" alt="" /></li>
+
+      </div>
+      <div class="cardDeckContainer">
+        <div class="activeCard">
+          <ul class="activeCardList">
+            <li class="card"><img style="transform: rotate(-30deg)" src="assets/Green_Draw.png" alt="" /></li>
+            <li class="card"><img src="assets/Yellow_2.png" alt="" /></li>
+            <li class="card"><img style="transform: rotate(27deg)" src="assets/Yellow_6.png" alt="" /></li>
+            <li class="card"><img style="transform: rotate(50deg)" src="assets/Yellow_9.png" alt="" /></li>
+          </ul>
+        </div>
+        <div class="cardStack">
+          <ul>
+            <li class="card"><img src="assets/Deck.png" alt="" /></li>
+            <li class="card"><img src="assets/Deck.png" alt="" /></li>
+           <li class="card"><img src="assets/Deck.png" alt="" /></li>
+            <li class="card"><img src="assets/Deck.png" alt="" /></li> 
+          </ul>
+        </div>
+      </div>
+
+      <div class="draggable-div">
+        <div class="player1Container">
+          <ul class="cards">
+            <li class="card"><img src="assets/Blue_0.png" alt="" /></li>
+            <li class="card"><img src="assets/Red_Reverse.png" alt="" /></li>
+            <li class="card"><img src="assets/Green_Draw.png" alt="" /></li>
+            <li class="card"><img src="assets/Yellow_2.png" alt="" /></li>
+            <li class="card"><img src="assets/Yellow_6.png" alt="" /></li>
+            <li class="card"><img src="assets/Wild_Draw.png" alt="" /></li>
+            <li class="card"><img src="assets/Green_7.png" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+    </main>
   </body>
-  <script src="script.js"></script>
+  <script src="js/drag.js"></script>
+  <script src="js/gameData.js"></script>
 </html>

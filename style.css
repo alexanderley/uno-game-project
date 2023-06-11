@@ -2,4 +2,138 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(55, 55, 55);
+
+  background-image: url("assets/Table_0.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.player1Container,
+.player2Container {
+  background-color: rgb(22, 22, 22);
+  /* height: 300px; */
+  /* width: 800px; */
+  height: fit-content;
+  width: fit-content;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.player1Container {
+  /* left: 0; */
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow-x: auto;
+  max-width: 100vw;
+}
+
+.player2Container {
+  top: 0;
+  left: 0;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  padding: 25px;
+}
+
+.card {
+  height: 200px;
+  width: 130px;
+  list-style: none;
+  /* background-color: grey; */
+  margin: 0;
+  padding: 0;
+  /* scale: 2; */
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card img {
+  height: 100%;
+}
+
+.cardDeckContainer {
+  display: flex;
+  gap: 200px;
+}
+
+.cardStack {
+  height: 300px;
+  width: 200px;
+}
+
+.activeCard {
+  position: relative;
+}
+
+.activeCardList .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: rotate(20deg); */
+}
+
+.activeCardList .card img {
+  transform: rotate(20deg);
+
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.cardStack {
+  position: relative;
+}
+
+.cardStack ul li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cardStack ul li img {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.cardStack ul li:nth-child(1) {
+  z-index: 5;
+  transform: translate(-45%, -48%);
+}
+
+.cardStack ul li:nth-child(2) {
+  z-index: 4;
+  /* transform: translate(-40%, -50%); */
+  transform: translate(-39%, -46%);
+}
+
+.cardStack ul li:nth-child(3) {
+  z-index: 3;
+  /* transform: translate(-40%, -50%); */
+  transform: translate(-33%, -43%);
+}
+.cardStack ul li:nth-child(4) {
+  z-index: 2;
+  /* transform: translate(-40%, -50%); */
+  transform: translate(-28%, -40%);
 }
