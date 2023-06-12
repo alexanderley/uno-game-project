@@ -45,7 +45,8 @@ main {
   left: 0;
 }
 
-.cards {
+.enemyCards,
+.playerOneCards {
   display: flex;
   gap: 20px;
   padding: 0;
