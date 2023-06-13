@@ -29,19 +29,17 @@ class Game {
     this.tableCards.push(firstCardData);
     console.log("fieldscards array", this.fieldCards);
     this.renderFieldCard();
-    // this.fieldCards.appendChild(firstCardElement);
-    // console.log("playercards", this.playerCards);
-    // console.log("fields cards", this.enemyCards);
     console.log("table cards", this.tableCards);
   }
 
   renderCardHand() {
     // render Player cards
-    playerCards.forEach((card) => {
+    this.playerCards.forEach((card) => {
       const li = document.createElement("li");
       li.classList.add("card");
       const img = document.createElement("img");
       img.src = card.image;
+      img.setAttribute("id", card.id);
       img.setAttribute("color", card.color);
       img.setAttribute("number", card.number);
       img.setAttribute("special", card.special);
@@ -51,11 +49,13 @@ class Game {
     });
 
     // render place holder of the enemy
-    enemyCards.forEach((card) => {
+    this.enemyCards.forEach((card) => {
       const li = document.createElement("li");
       li.classList.add("card");
       const img = document.createElement("img");
-      img.src = "assets/Deck.png";
+      // img.src = "assets/Deck.png";
+      img.src = card.image;
+      img.setAttribute("id", card.id);
       img.setAttribute("color", card.color);
       img.setAttribute("number", card.number);
       img.setAttribute("special", card.special);
@@ -71,6 +71,7 @@ class Game {
       li.classList.add("card");
       const img = document.createElement("img");
       img.src = card.image;
+      img.setAttribute("id", card.id);
       img.setAttribute("color", card.color);
       img.setAttribute("number", card.number);
       img.setAttribute("special", card.special);
@@ -92,6 +93,7 @@ class Game {
     newCardLi.classList.add("card");
     const img = document.createElement("img");
     img.src = cardData.image;
+    img.setAttribute("id", cardData.id);
     img.setAttribute("color", cardData.color);
     img.setAttribute("number", cardData.number);
     img.setAttribute("special", cardData.special);
@@ -102,25 +104,39 @@ class Game {
   drawCards(amount, player) {
     if (player === "player") {
       for (let i = 0; i < amount; i++) {
-        playerCards.push(this.randomCard(gameCards));
+        this.playerCards.push(this.randomCard(gameCards));
       }
     } else if (player === "enemy") {
       for (let i = 0; i < amount; i++) {
-        enemyCards.push(this.randomCard(gameCards));
+        this.enemyCards.push(this.randomCard(gameCards));
       }
     }
-    console.log("Enemy hand", enemyCards);
-    console.log("Player hand", playerCards);
+    // console.log("Enemy hand", this.enemyCards);
+    // console.log("Player hand", this.playerCards);
   }
 
   playCard(event) {
     if (event.target.tagName === "IMG") {
-      console.log(event.target);
+      const imgElement = event.target;
+
+      console.log("color", imgElement.getAttribute("color"));
+
       const liElement = event.target.closest("li");
+
+      const topFieldCardLi = this.fieldCards.lastElementChild;
+      const topfieldCardImg = topFieldCardLi.querySelector("img");
+
+      if (
+        imgElement.getAttribute("color") !==
+          topfieldCardImg.getAttribute("color") &&
+        imgElement.getAttribute("number") !==
+          topfieldCardImg.getAttribute("number")
+      )
+        return;
+
+      //  Adds the card to the cardStack
       if (liElement) {
         this.cardStack.appendChild(liElement);
-        console.log("playercards", this.playerCards);
-        console.log("fields cards", this.enemyCards);
       }
     }
   }

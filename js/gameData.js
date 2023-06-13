@@ -153,6 +153,6 @@ const gameCards = [
   // },
 ];
 
-const playerCards = [];
-const enemyCards = [];
+// const playerCards = [];
+// const enemyCards = [];
 // const fieldCards = [];
