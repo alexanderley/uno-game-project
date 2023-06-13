@@ -10,14 +10,14 @@ const gameCards = [
   { id: 8, color: "red", number: 7, image: "assets/Red_7.png" },
   { id: 9, color: "red", number: 8, image: "assets/Red_8.png" },
   { id: 10, color: "red", number: 9, image: "assets/Red_9.png" },
-  {
-    id: 11,
-    color: "red",
-    special: "return",
-    image: "assets/Red_Reverse.png",
-  },
-  { id: 12, color: "red", special: "skip", image: "assets/Red_Skip.png" },
-  { id: 13, color: "red", special: "plus2", image: "assets/Red_Draw.png" },
+  // {
+  //   id: 11,
+  //   color: "red",
+  //   special: "return",
+  //   image: "assets/Red_Reverse.png",
+  // },
+  // { id: 12, color: "red", special: "skip", image: "assets/Red_Skip.png" },
+  // { id: 13, color: "red", special: "plus2", image: "assets/Red_Draw.png" },
 
   // Blue Cards
   { id: 14, color: "blue", number: 0, image: "assets/Blue_0.png" },
@@ -30,14 +30,14 @@ const gameCards = [
   { id: 21, color: "blue", number: 7, image: "assets/Blue_7.png" },
   { id: 22, color: "blue", number: 8, image: "assets/Blue_8.png" },
   { id: 23, color: "blue", number: 9, image: "assets/Blue_9.png" },
-  {
-    id: 24,
-    color: "blue",
-    special: "return",
-    image: "assets/Blue_Reverse.png",
-  },
-  { id: 25, color: "blue", special: "skip", image: "assets/Blue_Skip.png" },
-  { id: 26, color: "blue", special: "plus2", image: "assets/Blue_Draw.png" },
+  // {
+  //   id: 24,
+  //   color: "blue",
+  //   special: "return",
+  //   image: "assets/Blue_Reverse.png",
+  // },
+  // { id: 25, color: "blue", special: "skip", image: "assets/Blue_Skip.png" },
+  // { id: 26, color: "blue", special: "plus2", image: "assets/Blue_Draw.png" },
 
   // Green Cards
   { id: 27, color: "green", number: 0, image: "assets/Green_0.png" },
@@ -50,24 +50,24 @@ const gameCards = [
   { id: 34, color: "green", number: 7, image: "assets/Green_7.png" },
   { id: 35, color: "green", number: 8, image: "assets/Green_8.png" },
   { id: 36, color: "green", number: 9, image: "assets/Green_9.png" },
-  {
-    id: 37,
-    color: "green",
-    special: "return",
-    image: "assets/Green_Reverse.png",
-  },
-  {
-    id: 38,
-    color: "green",
-    special: "skip",
-    image: "assets/Green_Skip.png",
-  },
-  {
-    id: 39,
-    color: "green",
-    special: "plus2",
-    image: "assets/Green_Draw.png",
-  },
+  // {
+  //   id: 37,
+  //   color: "green",
+  //   special: "return",
+  //   image: "assets/Green_Reverse.png",
+  // },
+  // {
+  //   id: 38,
+  //   color: "green",
+  //   special: "skip",
+  //   image: "assets/Green_Skip.png",
+  // },
+  // {
+  //   id: 39,
+  //   color: "green",
+  //   special: "plus2",
+  //   image: "assets/Green_Draw.png",
+  // },
 
   // Yellow Cards
   { id: 40, color: "yellow", number: 0, image: "assets/Yellow_0.png" },
@@ -80,24 +80,24 @@ const gameCards = [
   { id: 47, color: "yellow", number: 7, image: "assets/Yellow_7.png" },
   { id: 48, color: "yellow", number: 8, image: "assets/Yellow_8.png" },
   { id: 49, color: "yellow", number: 9, image: "assets/Yellow_9.png" },
-  {
-    id: 50,
-    color: "yellow",
-    special: "return",
-    image: "assets/Yellow_Reverse.png",
-  },
-  {
-    id: 51,
-    color: "yellow",
-    special: "skip",
-    image: "assets/Yellow_Skip.png",
-  },
-  {
-    id: 52,
-    color: "yellow",
-    special: "plus2",
-    image: "assets/Yellow_Draw.png",
-  },
+  // {
+  //   id: 50,
+  //   color: "yellow",
+  //   special: "return",
+  //   image: "assets/Yellow_Reverse.png",
+  // },
+  // {
+  //   id: 51,
+  //   color: "yellow",
+  //   special: "skip",
+  //   image: "assets/Yellow_Skip.png",
+  // },
+  // {
+  //   id: 52,
+  //   color: "yellow",
+  //   special: "plus2",
+  //   image: "assets/Yellow_Draw.png",
+  // },
 
   // Black cards
   // +4
@@ -155,4 +155,4 @@ const gameCards = [
 
 const playerCards = [];
 const enemyCards = [];
-const fieldCards = [];
+// const fieldCards = [];

@@ -16,8 +16,7 @@ class Game {
     // click handler
     this.startBtn.addEventListener("click", this.startGame.bind(this));
     this.topDeckCard.addEventListener("click", this.drawSingleCard.bind(this));
-
-    this.playerOneCards.addEventListener("click", this.playCard);
+    this.playerOneCards.addEventListener("click", this.playCard.bind(this));
   }
   startGame() {
     this.drawCards(7, "player");
@@ -28,11 +27,12 @@ class Game {
     const firstCardData = this.randomCard(gameCards);
     const firstCardElement = this.createCard(firstCardData);
     this.tableCards.push(firstCardData);
-    // console.log("firstCard", firstCardData);
-    // console.log("the array", this.tableCards);
     console.log("fieldscards array", this.fieldCards);
     this.renderFieldCard();
     // this.fieldCards.appendChild(firstCardElement);
+    // console.log("playercards", this.playerCards);
+    // console.log("fields cards", this.enemyCards);
+    console.log("table cards", this.tableCards);
   }
 
   renderCardHand() {
@@ -113,23 +113,14 @@ class Game {
     console.log("Player hand", playerCards);
   }
 
-  // playCard(event) {
-  //   if (event.target.tagName === "IMG") {
-  //     if (event.target.color === fieldCards[0].color) {
-  //       const liElement = event.target.closest("li");
-  //       if (liElement) {
-  //         liElement.remove();
-  //       }
-  //     }
-  //   }
-  // }
-
   playCard(event) {
     if (event.target.tagName === "IMG") {
       console.log(event.target);
       const liElement = event.target.closest("li");
       if (liElement) {
-        liElement.remove();
+        this.cardStack.appendChild(liElement);
+        console.log("playercards", this.playerCards);
+        console.log("fields cards", this.enemyCards);
       }
     }
   }
