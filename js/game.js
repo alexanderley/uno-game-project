@@ -22,7 +22,7 @@ class Game {
     this.enemyPlays.addEventListener("click", this.enemyPlayCard.bind(this));
   }
   startGame() {
-    this.drawCards(7, "player");
+    this.drawCards(1, "player");
     this.drawCards(1, "enemy");
     // this.renderCardHand();
     this.renderPlayerCardHand();
@@ -198,7 +198,6 @@ class Game {
     const topfieldCardImg = topFieldCardLi.querySelector("img");
 
     const imgArray = Array.from(enemyLis, function (enemyLi) {
-      // return enemyLi.querySelector("img").attributes.color.value;
       return enemyLi.querySelector("img");
     });
     console.log("imgArray", imgArray);
@@ -211,9 +210,23 @@ class Game {
     if (matchingCard === undefined) {
       this.drawCards(1, "enemy");
       this.renderEnemyCardHand();
-      console.log("draw card");
-      console.log("enemycards", this.enemyCards);
+      return;
     }
+    if (matchingCard) {
+      const closestLi = matchingCard.closest("li");
+      console.log("matching card", matchingCard);
+      console.log("closestli", closestLi);
+
+      const liMatchingCard = document.createElement("li");
+      liMatchingCard.classList.add("card");
+      // liMatchingCard.appendChild(matchingCard);
+      // this.cardStack.appendChild(liMatchingCard);
+
+      // this.cardStack.appendChild(closestLi);
+      // this.cardStack.appendChild(matchingCard);
+      this.cardStack.appendChild(matchingCard);
+    }
+
     console.log("matching", matchingCard);
   }
 
