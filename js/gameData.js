@@ -101,56 +101,56 @@ const gameCards = [
 
   // Black cards
   // +4
-  {
-    id: 53,
-    color: "black",
-    special: "plus4",
-    image: "assets/Wild_Draw.png",
-  },
-  {
-    id: 54,
-    color: "black",
-    special: "plus4",
-    image: "assets/Wild_Draw.png",
-  },
-  {
-    id: 55,
-    color: "black",
-    special: "plus4",
-    image: "assets/Wild_Draw.png",
-  },
-  {
-    id: 56,
-    color: "black",
-    special: "plus4",
-    image: "assets/Wild_Draw.png",
-  },
+  // {
+  //   id: 53,
+  //   color: "black",
+  //   special: "plus4",
+  //   image: "assets/Wild_Draw.png",
+  // },
+  // {
+  //   id: 54,
+  //   color: "black",
+  //   special: "plus4",
+  //   image: "assets/Wild_Draw.png",
+  // },
+  // {
+  //   id: 55,
+  //   color: "black",
+  //   special: "plus4",
+  //   image: "assets/Wild_Draw.png",
+  // },
+  // {
+  //   id: 56,
+  //   color: "black",
+  //   special: "plus4",
+  //   image: "assets/Wild_Draw.png",
+  // },
 
-  // change color
-  {
-    id: 52,
-    color: "black",
-    special: "changeColor",
-    image: "assets/Wild.png",
-  },
-  {
-    id: 52,
-    color: "black",
-    special: "changeColor",
-    image: "assets/Wild.png",
-  },
-  {
-    id: 52,
-    color: "black",
-    special: "changeColor",
-    image: "assets/Wild.png",
-  },
-  {
-    id: 52,
-    color: "black",
-    special: "changeColor",
-    image: "assets/Wild.png",
-  },
+  // // change color
+  // {
+  //   id: 52,
+  //   color: "black",
+  //   special: "changeColor",
+  //   image: "assets/Wild.png",
+  // },
+  // {
+  //   id: 52,
+  //   color: "black",
+  //   special: "changeColor",
+  //   image: "assets/Wild.png",
+  // },
+  // {
+  //   id: 52,
+  //   color: "black",
+  //   special: "changeColor",
+  //   image: "assets/Wild.png",
+  // },
+  // {
+  //   id: 52,
+  //   color: "black",
+  //   special: "changeColor",
+  //   image: "assets/Wild.png",
+  // },
 ];
 
 const playerCards = [];
