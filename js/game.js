@@ -5,6 +5,10 @@ class Game {
     this.playerHand = document.querySelector(".player1Container");
     this.cardStack = document.querySelector(".activeCardList");
 
+    this.startScreen = document.querySelector(".startScreen");
+    this.windScreen = document.querySelector(".winScreen");
+    this.looseScreen = document.querySelector(".looseScreen");
+
     this.playerOneCards = document.querySelector(".playerOneCards");
     this.playerEnemyCards = document.querySelector(".enemyCards");
     this.topDeckCard = document.querySelector(".topDeckCard");
@@ -18,7 +22,6 @@ class Game {
     this.startBtn.addEventListener("click", this.startGame.bind(this));
     this.topDeckCard.addEventListener("click", this.drawSingleCard.bind(this));
     this.playerOneCards.addEventListener("click", this.playCard.bind(this));
-
     this.enemyPlays.addEventListener("click", this.enemyPlayCard.bind(this));
   }
   startGame() {
@@ -31,9 +34,8 @@ class Game {
     const firstCardData = this.randomCard(gameCards);
     const firstCardElement = this.createCard(firstCardData);
     this.tableCards.push(firstCardData);
-    // console.log("fieldscards array", this.fieldCards);
     this.renderFieldCard();
-    // console.log("table cards", this.tableCards);
+    this.startScreen.style.display = "none";
   }
 
   renderPlayerCardHand() {
@@ -63,7 +65,8 @@ class Game {
       const li = document.createElement("li");
       li.classList.add("card");
       const img = document.createElement("img");
-      img.src = card.image;
+      img.src = "assets/Deck.png";
+      img.setAttribute("src2", card.image);
       img.setAttribute("id", card.id);
       img.setAttribute("color", card.color);
       img.setAttribute("number", card.number);
@@ -144,8 +147,28 @@ class Game {
       //  Adds the card to the cardStack
       if (liElement) {
         this.cardStack.appendChild(liElement);
-        console.log("playerCardArr", this.playerCards);
       }
+
+      // remove player cards
+      if (imgElement) {
+        const id = Number(imgElement.getAttribute("id"));
+        let index;
+        this.playerCards.forEach((card, i) => {
+          if (card.id === id) {
+            index = i;
+          }
+        });
+
+        this.playerCards.splice(index, 1);
+      }
+
+      if (this.playerCards.length === 0) {
+        console.log("You win!");
+        this.windScreen.style.display = "flex";
+      }
+      setTimeout(() => {
+        this.enemyPlayCard();
+      }, 2000);
     }
   }
 
@@ -160,20 +183,11 @@ class Game {
       return enemyLi.querySelector("img");
     });
 
-    // const imgArray = Array.from(document.querySelector(".enemyCards"));
-    // console.log("imgArr", imgArray);
-
     const matchingCard = imgArray.find(
       (card) =>
         card.attributes.color.value === topfieldCardImg.getAttribute("color") ||
         card.attributes.number.value === topfieldCardImg.getAttribute("number")
     );
-
-    // const matchingCard = imgArray.find(
-    //   (card) =>
-    //     card.color.value === topfieldCardImg.getAttribute("color") ||
-    //     card.number.value === topfieldCardImg.getAttribute("number")
-    // );
 
     console.log("matching card", matchingCard);
 
@@ -187,11 +201,8 @@ class Game {
     liElement.appendChild(matchingCard);
 
     if (matchingCard) {
-      // const closestLi = matchingCard.closest("li");
-      // closestLi.appendChild(matchingCard);
-      // const liMatchingCard = document.createElement("li");
-      // liMatchingCard.classList.add("card");
-
+      console.log("matching card", matchingCard);
+      matchingCard.setAttribute("src", matchingCard.getAttribute("src2"));
       this.cardStack.appendChild(matchingCard.closest("li"));
 
       const id = Number(matchingCard.getAttribute("id"));
@@ -206,28 +217,21 @@ class Game {
       this.enemyCards.splice(index, 1);
       console.log("enemy cards arr", this.enemyCards);
     }
-
-    // console.log("matching", matchingCard);
+    if (this.enemyCards.length === 0) {
+      console.log("You loose!");
+      this.looseScreen.style.display = "flex";
+    }
   }
-
-  // if (matchingCard) {
-  //   const closestLi = matchingCard.closest("li");
-  //   console.log("matching card", matchingCard);
-  //   console.log("closestli", closestLi);
-
-  //   const liMatchingCard = document.createElement("li");
-  //   liMatchingCard.classList.add("card");
-
-  //   const liElement = matchingCard.closest("li");
-
-  //   this.cardStack.appendChild(closestLi.appendChild(liElement));
-  // }
 
   drawSingleCard() {
     const newCardData = this.randomCard(gameCards);
     const newCardLi = this.createCard(newCardData);
     this.playerCards.push(newCardData);
     this.playerOneCards.appendChild(newCardLi);
+
+    setTimeout(() => {
+      this.enemyPlayCard();
+    }, 2000);
   }
 
   playSingleCard() {}

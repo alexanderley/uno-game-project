@@ -10,6 +10,38 @@ body {
   width: 100vw;
   overflow: hidden;
   position: relative;
+
+  font-family: "VT323", monospace;
+}
+
+.screen {
+  background-color: rgba(19, 17, 17, 0.95);
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 70px;
+}
+
+.winScreen {
+  display: none;
+}
+
+.looseScreen {
+  display: none;
+}
+
+h1:hover {
+  cursor: pointer;
+  color: rgb(236, 30, 15);
+  transition: all 0.3s ease-in-out;
+  user-select: none;
 }
 
 main {
