@@ -40,7 +40,6 @@ class Game {
 
   renderPlayerCardHand() {
     this.playerOneCards.innerHTML = "";
-
     // Render player cards
     this.playerCards.forEach((card) => {
       const li = document.createElement("li");
@@ -128,11 +127,7 @@ class Game {
   playCard(event) {
     if (event.target.tagName === "IMG") {
       const imgElement = event.target;
-
-      console.log("color", imgElement.getAttribute("color"));
-
       const liElement = event.target.closest("li");
-
       const topFieldCardLi = this.fieldCards.lastElementChild;
       const topfieldCardImg = topFieldCardLi.querySelector("img");
 
@@ -194,14 +189,12 @@ class Game {
     if (matchingCard === undefined) {
       this.drawCards(1, "enemy");
       this.renderEnemyCardHand();
-      console.log("enemy cards arr", this.enemyCards);
       return;
     }
     const liElement = matchingCard.closest("li");
     liElement.appendChild(matchingCard);
 
     if (matchingCard) {
-      console.log("matching card", matchingCard);
       matchingCard.setAttribute("src", matchingCard.getAttribute("src2"));
       this.cardStack.appendChild(matchingCard.closest("li"));
 
@@ -213,12 +206,9 @@ class Game {
           index = i;
         }
       });
-      console.log("index", index);
       this.enemyCards.splice(index, 1);
-      console.log("enemy cards arr", this.enemyCards);
     }
     if (this.enemyCards.length === 0) {
-      console.log("You loose!");
       this.looseScreen.style.display = "flex";
     }
   }
@@ -243,9 +233,7 @@ class Game {
 
   checkGameState() {
     if (playerCards.length === 0) {
-      console.log("You win the game");
     } else if (enemyCards.length === 0) {
-      console.log("You lost the game");
     }
   }
 }
