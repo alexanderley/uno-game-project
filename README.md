@@ -23,6 +23,9 @@ Visual Feedback: Visual cues and notifications provide feedback during the game,
 ## Contributing
 Contributions to this project are welcome! If you find any bugs, have suggestions for improvements, or would like to add new features, please feel free to submit a pull request.
 
+## Future updates
+As I planned for some future updates is to implement the special cards known from a classic Uno Game. The content for the special cards are already implement and you can find them inside of the gameData.js, but they are commented out for know. It is also possible to add some aditional diffculites by changing the amount of cards the enemy or the Player receives. Another interesting feature wich could be implemented would be a coinflip option make a possible to play with another friend on the same computer.
+
 ## Acknowledgments
 I would like to thank the instructors and staff at Ironhack for their guidance and support throughout this project. Their expertise and resources were instrumental in helping me learn and develop my first JavaScript game.
 
