@@ -25,8 +25,8 @@ class Game {
     this.enemyPlays.addEventListener("click", this.enemyPlayCard.bind(this));
   }
   startGame() {
-    this.drawCards(1, "player");
-    this.drawCards(1, "enemy");
+    this.drawCards(7, "player");
+    this.drawCards(7, "enemy");
     this.renderPlayerCardHand();
     this.renderEnemyCardHand();
 
